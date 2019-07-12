@@ -11,7 +11,7 @@ https://killerarena.netlify.com/
 
 ![Alt text](./images/screen1.png "First Image")
 
-![Alt text](./images/screen2.png "Second Image")
+![Alt text](./images/screen2nd.png "Second Image")
 
 
 
