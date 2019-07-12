@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  font-size: 16px;
+}
+canvas {
+  background-image: url("../images/clash-bkg.jpg");
+  background-size: cover;
+}
+* {
+  color: white;
+}
+.game {
+  display: flex;
+}
+
+#scoreboard {
+  width: 300px;
+  height: 100vh;
+  background: black;
+}
+
+.biggerText {
+  font-size: 52px;
+  line-height: 152px;
+  text-align: center;
+  border-bottom: 1px solid white;
+}
+
+.text-red {
+  color: red;
+}
+
+.text-green {
+  color: #08e008;
+}
+
+.enemyItem {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid white;
+  padding: 8px 0;
+}
+
+.arena-controls {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 64px;
+}
+
+.arena-controls button {
+  width: 45%;
+}
+
+audio {
+  position: fixed;
+}

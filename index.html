@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"/>
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <title>Killer Arena</title>
+  </head>
+  <body>
+    <audio id="start" autoplay controls>
+      <source src="./audios/start.mp3" type="audio/ogg" />
+    </audio>
+    <section class="message -right play-store">
+      <a href="https://youtu.be/TJryIc0Cwy4">
+      <img src="./images/cr-ps.jpg"/></a>
+
+      <!-- Balloon -->
+      <div class="nes-balloon from-left">
+        <a href="https://play.google.com/store/apps/details?id=com.supercell.clashroyale&hl=en">
+        <span class="nes-text is-error">
+          <p>Characters inspired from Clash Royal. Check here!</p></span>
+        </a>
+      </div>
+    </section>
+    <div class="startBanner">
+      <img src="./images/start-archer.png" />
+      <div>
+        <div class="nes-container is-rounded is-dark">
+          <h1>Killer Arena</h1>
+        </div>
+        <button type="button" class="nes-btn is-success"
+          onclick="window.location.href='./arena/arena.html';">Start</button>
+        <button type="button" class="nes-btn is-warning"
+          onclick="window.location.href='./rules/rules.html';">Rules</button>
+      </div>
+    </div>
+  </body>
+</html>

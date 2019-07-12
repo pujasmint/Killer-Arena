@@ -1,0 +1,18 @@
+body {
+  background: lightskyblue;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+
+.lists {
+  padding: 80px;
+}
+
+.lists li {
+  padding: 16px 0;
+}
+
+h1 {
+  color: darkred;
+}
