@@ -40,4 +40,5 @@ button {
 
 audio {
   position: fixed;
+  padding: 6px;
 }

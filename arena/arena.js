@@ -59,6 +59,7 @@ document.onkeydown = function(event) {
   event.preventDefault();
 };
 
+// Archer Position
 function animateArcher(newYPosition) {
   if (newYPosition > 0 && newYPosition < canvas.height - 100) {
     c.clearRect(0, archerYPosition, archerHeightWidth, archerHeightWidth);
@@ -72,6 +73,7 @@ function animateArcher(newYPosition) {
     archerYPosition = newYPosition;
   }
 }
+// Arrow shoot
 
 function shootArrow() {
   arrowInProgress = true;
@@ -82,13 +84,15 @@ function shootArrow() {
   arrowXPosition = arrowXPosition + 15;
   arrowYPosition = arrowYPosition + 1;
   if (arrowXPosition > canvas.width || arrowYPosition > canvas.height) {
-    cancelAnimationFrame(arrow);
-    c.clearRect(arrowXPosition - 20, arrowYPosition, 50, 20);
-    arrowInProgress = false;
-    arrowYPosition = archerYPosition + 18;
-    arrowXPosition = 90;
+  cancelAnimationFrame(arrow);
+  c.clearRect(arrowXPosition - 20, arrowYPosition, 50, 20);
+  arrowInProgress = false;
+  arrowYPosition = archerYPosition + 18;
+  arrowXPosition = 90;
   }
 }
+
+//demon hit position
 
 function checkDemonHit(arrowX, arrowY) {
   for (const dem of demons) {
@@ -108,8 +112,8 @@ function checkDemonHit(arrowX, arrowY) {
       dem.positionX = 0;
       dem.positionY = 0;
       enemiesKilled.push({
-        name: dem.name,
-        point: dem.killPoints
+      name: dem.name,
+      point: dem.killPoints
       });
       document.getElementById("kill").play();
       remainingTime = remainingTime + dem.additionalTime;
@@ -119,9 +123,11 @@ function checkDemonHit(arrowX, arrowY) {
   }
 }
 
+// score conditions
+
 function getCollectedScore(enemyList) {
   const collectedEnemyScore = {};
-  for (enemy of enemyList) {
+  for (let enemy of enemyList) {
     if (collectedEnemyScore[enemy.name]) {
       collectedEnemyScore[enemy.name].count++;
     } else {
@@ -134,6 +140,8 @@ function getCollectedScore(enemyList) {
   return collectedEnemyScore;
 }
 
+// Total Score
+
 function calculateTotalScore(collectedScore) {
   const killList = document.querySelector("#killList");
   let htmlString = "";
@@ -145,16 +153,16 @@ function calculateTotalScore(collectedScore) {
     htmlString =
       htmlString +
       `<div class="enemyItem">
-    <span>${enemy}&nbsp;x&nbsp;${collectedScore[enemy].count}</span>
-    <span>${totalEnemyScore}</span>
-  </div>`;
+     <span>${enemy}&nbsp;x&nbsp;${collectedScore[enemy].count}</span>
+     <span>${totalEnemyScore}</span>
+     </div>`;
   }
   killList.innerHTML = htmlString;
   document.querySelector("#totalScore").innerText = totalScore;
 }
 
-
-
+  
+// demon creation
 function createDemons() {
   for (let demon of demons) {
     if (demon.killed) {
@@ -198,6 +206,8 @@ function createDemons() {
   }
 }
 
+// Start game
+
 var timeCheckID = setInterval(() => {
   startTime = startTime + 1000;
   remainingTime = remainingTime - 1000;
@@ -215,6 +225,8 @@ var timeCheckID = setInterval(() => {
     endGame();
   }
 }, 1000);
+
+// end game 
 
 function endGame() {
   clearInterval(timeCheckID);
