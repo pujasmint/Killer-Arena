@@ -9,10 +9,9 @@ https://killerarena.netlify.com/
 
 ## Preview
 
-![Alt text](/images/screen1.png "Optional Title")
+![Alt text](./images/screen1.png "First Image")
 
-![Alt text](/images/screen2.png "Optional Title")
-
+![Alt text](./images/screen2.png "Second Image")
 
 
 
